@@ -1,0 +1,236 @@
+{
+  "Terminator 2" : [
+    {
+      "name": "Terminator 2: Judgment Day",
+      "country": "United States",
+      "release dates": "July 3, 1991",
+      "running time": "137 minutes",
+      "distributed by": [
+        {
+          "name": "Tri-Star Pictures"
+        }
+      ],
+      "Directed by":[
+        {
+          "name": "James Cameron"
+        }
+      ],
+      "Written by": [
+        {
+          "name": "James Cameron"
+        },
+        {
+          "name": "William Wisher",
+          "born": "August 16, 1954"
+        }
+      ],
+      "Starring": [
+        {
+          "name": "Arnold Schwarzenegger",
+          "born": "July 30, 1947",
+          "characters": "Terminator"
+
+        },
+        {
+          "name": "Linda Hamilton",
+          "born": "September 26, 1956",
+          "characters": "Sarah Connor"
+        },
+        {
+          "name": "Robert Patrick",
+          "born": "November 5, 1958",
+          "characters": "T-1000"
+        },
+        {
+          "name": "Edward Furlong",
+          "born": "August 2, 1977",
+          "characters": "John Connor"
+        }
+      ]
+    }
+  ],
+  "Avatar" : [
+    {
+      "name": "Avatar",
+      "country": "United States",
+      "release dates": "December 18, 2009",
+      "running time": "162 minutes",
+      "distributed by": [
+        {
+          "name": "20th Century Fox"
+        }
+      ],
+      "Directed by":[
+        {
+          "name": "James Cameron"
+        }
+      ],
+      "Written by": [
+        {
+          "name": "James Cameron"
+        },
+        {
+          "name": "William Wisher"
+        }
+      ],
+      "Starring": [
+        {
+          "name": "Sam Worthington",
+          "born": "2 August 1976"
+
+        },
+        {
+          "name": "Zoe Saldana",
+          "born": "June 19, 1978"
+        },
+        {
+          "name": "Stephen Lang",
+          "born": "July 11, 1952"
+        },
+        {
+          "name": "Michelle Rodriguez",
+          "born": "July 12, 1978"
+        },
+        {
+          "name": "Sigourney Weaver",
+          "born": "October 8, 1949"
+        }
+      ]
+    }
+  ],
+  "Ghostbusters" : [
+    {
+      "name": "Ghostbusters",
+      "country": "United States",
+      "release dates": "June 8, 1984",
+      "running time": "105 minutes",
+      "distributed by": [
+        {
+          "name": "Columbia Pictures"
+        }
+      ],
+      "Directed by":[
+        {
+          "name": "Ivan Reitman"
+        }
+      ],
+      "Written by": [
+        {
+          "name": "Dan Aykroyd"
+        },
+        {
+          "name": "Harold Ramis"
+        }
+      ],
+      "Starring": [
+        {
+          "name": "Bill Murray",
+          "born": "September 21, 1950"
+        },
+        {
+          "name": "Dan Aykroyd",
+          "born": "July 1, 1952"
+        },
+        {
+          "name": "Sigourney Weaver",
+          "born": "October 8, 1949"
+        },
+        {
+          "name": "Harold Ramis",
+          "born": "November 21, 1944"
+        },
+        {
+          "name": "Rick Moranis",
+          "born": "April 18, 1953"
+        }
+
+      ]
+    }
+  ],
+
+  "Dune" : [
+    {
+      "name": "Dune",
+      "country": "United States",
+      "release dates": "October 22, 2021",
+      "running time": "156 minutes",
+      "distributed by": [
+        {
+          "name": "Warner Bros. Pictures"
+        }
+      ],
+      "Directed by":[
+        {
+          "name": "Denis Villeneuve"
+        }
+      ],
+      "Written by": [
+        {
+          "name": "Jon Spaihts"
+        },
+        {
+          "name": "Denis Villeneuve"
+        },
+        {
+          "name": "Eric Roth"
+        }
+      ],
+      "Starring": [
+        {
+          "name": "Timothée Chalamet",
+          "born": "December 27, 1995"
+        },
+        {
+          "name": "Rebecca Ferguson",
+          "born": "19 October 1983"
+        },
+        {
+          "name": "Oscar Isaac",
+          "born": "March 9, 1979"
+        },
+        {
+          "name": "Josh Brolin",
+          "born": "February 12, 1968"
+        }
+
+      ]
+    }
+  ],
+
+  "Aliens" : [
+    {
+      "name": "Aliens",
+      "country": "United States",
+      "release dates": "July 18, 1986",
+      "running time": "137 minutes",
+      "distributed by": [
+        {
+          "name": "20th Century Fox"
+        }
+      ],
+      "Directed by":[
+        {
+          "name": "James Cameron"
+        }
+      ],
+      "Written by": [
+        {
+          "name": "James Cameron"
+        },
+        {
+          "name": "David Giler"
+        },
+        {
+          "name": "Walter Hill"
+        }
+      ],
+      "Starring": [
+        {
+          "name": "Sigourney Weaver",
+          "born": "October 8, 1949"
+        }
+      ]
+    }
+  ]
+
+}
