@@ -1,6 +1,6 @@
 
 #include "menu.h"
-
+#include "base.h"
 
 int main()
 {
@@ -13,6 +13,14 @@ int main()
 		switch (input)
 		{
 		case 1:
+			read_json_file();
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			show_json();
 			break;
 		default:
 			std::cerr << "False!  try again!!!" << std::endl;
