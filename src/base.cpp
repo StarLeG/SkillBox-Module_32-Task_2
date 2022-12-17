@@ -57,17 +57,20 @@ void addMovies_to_base()
 	std::cin >> movies.data_Movies.productionYear;
 	std::cout << "Enter movie duration: ";
 	std::cin >> movies.data_Movies.runningTime;
-	std::cout << "Enter the name of the film studio";
+	std::cin.ignore();
+	std::cout << "Enter the name of the film studio: ";
 	std::getline(std::cin, movies.data_Movies.distributed.name);
-	std::cout << "Enter director's name";
+	std::cout << "Enter director's name: ";
 	std::getline(std::cin, movies.data_Movies.directed.name);
-	std::cout << "Enter the wall painter's name";
+	std::cout << "Enter the wall painter's name: ";
 	std::getline(std::cin, movies.data_Movies.written.name);
 	std::cout << "Enter the number of actors: ";
 	int numberActors = 0;
 	std::cin >> numberActors;
-
-	while (numberActors != 0)
+	std::cin.ignore();
+	movies.data_Movies.starring.resize(numberActors);
+	bool  flag = false;
+	while (!flag)
 	{
 		for (int i = 0; i < numberActors; i++)
 		{
@@ -79,9 +82,13 @@ void addMovies_to_base()
 			std::cin >> movies.data_Movies.starring[i].birthday_day
 					 >> movies.data_Movies.starring[i].birthday_month
 					 >> movies.data_Movies.starring[i].birthday_year;
+			std::cin.ignore();
 			std::cout << "Enter the role of the actor: ";
 			std::getline(std::cin, movies.data_Movies.starring[i].characters);
-
+			if (i == numberActors - 1)
+			{
+				flag = true;
+			}
 		}
 	}
 
