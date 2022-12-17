@@ -18,7 +18,6 @@ namespace f_n
 		int birthday_month;
 		int birthday_year;
 		std::string characters;
-		std::string country;
 	};
 
 	struct Distributed
@@ -40,19 +39,19 @@ namespace f_n
 	{
 		std::string name;
 		std::string country;
-		std::string releaseDates;
+		int productionYear;
 		int runningTime;
 		f_n::Distributed distributed;
 		f_n::Directed directed;
 		f_n::Written written;
-		f_n::Starring starring;
+		std::vector<f_n::Starring> starring;
 
 	};
 }
 
 struct Movies
 {
-	std::string name;
+	int id;
 	f_n::Data_Movies data_Movies;
 };
 
