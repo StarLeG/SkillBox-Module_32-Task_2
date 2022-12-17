@@ -14,9 +14,6 @@ namespace f_n
 	{
 		std::string firstName;
 		std::string lastName;
-		int birthday_day;
-		int birthday_month;
-		int birthday_year;
 		std::string characters;
 	};
 
@@ -37,7 +34,6 @@ namespace f_n
 
 	struct Data_Movies
 	{
-		std::string name;
 		std::string country;
 		int productionYear;
 		int runningTime;
@@ -45,16 +41,22 @@ namespace f_n
 		f_n::Directed directed;
 		f_n::Written written;
 		std::vector<f_n::Starring> starring;
+	};
 
+	struct Movie
+	{
+		std::string name;
+		f_n::Data_Movies data_Movies;
 	};
 }
 
-struct Movies
+struct CinemaBase
 {
-	int id;
-	f_n::Data_Movies data_Movies;
+	std::vector<f_n::Movie> cinemaBase;
 };
 
 void show_json();
+
 void read_json_file();
+
 void addMovies_to_base();

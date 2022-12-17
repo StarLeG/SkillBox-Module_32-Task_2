@@ -29,7 +29,7 @@ void read_json_file()
 	}
 
 	nlohmann::json object{};
-	Movies movies{};
+	CinemaBase movies{};
 	file_json >> object;
 	file_json.close();
 
@@ -37,85 +37,92 @@ void read_json_file()
 
 	nlohmann::json object_1 = nlohmann::json::parse(serializedString);
 
-
-	std::cout << movies.id << std::endl;
-
 }
 
 void addMovies_to_base()
 {
-	Movies movies{};
+	CinemaBase movies{};
+	movies.cinemaBase.resize(movies.cinemaBase.size() + 1);
+	int index = movies.cinemaBase.size() - 1;
 
-	std::cout << "Enter id: ";
-	std::cin >> movies.id;
 	std::cout << "Enter movie title: ";
 	std::cin.ignore();
-	std::getline(std::cin, movies.data_Movies.name);
+	std::getline(std::cin, movies.cinemaBase[index].name);
+
 	std::cout << "Enter country name: ";
-	std::getline(std::cin, movies.data_Movies.country);
+	std::getline(std::cin, movies.cinemaBase[index].data_Movies.country);
+
 	std::cout << "Enter production year: ";
-	std::cin >> movies.data_Movies.productionYear;
+	std::cin >> movies.cinemaBase[index].data_Movies.productionYear;
+
 	std::cout << "Enter movie duration: ";
-	std::cin >> movies.data_Movies.runningTime;
+	std::cin >> movies.cinemaBase[index].data_Movies.runningTime;
+
 	std::cin.ignore();
 	std::cout << "Enter the name of the film studio: ";
-	std::getline(std::cin, movies.data_Movies.distributed.name);
+	std::getline(std::cin, movies.cinemaBase[index].data_Movies.distributed.name);
+
 	std::cout << "Enter director's name: ";
-	std::getline(std::cin, movies.data_Movies.directed.name);
+	std::getline(std::cin, movies.cinemaBase[index].data_Movies.directed.name);
+
 	std::cout << "Enter the wall painter's name: ";
-	std::getline(std::cin, movies.data_Movies.written.name);
-	std::cout << "Enter the number of actors: ";
-	int numberActors = 0;
-	std::cin >> numberActors;
-	std::cin.ignore();
-	movies.data_Movies.starring.resize(numberActors);
-	bool  flag = false;
+	std::getline(std::cin, movies.cinemaBase[index].data_Movies.written.name);
+
+	movies.cinemaBase[index].data_Movies.starring.resize(movies.cinemaBase[index].data_Movies.starring.size() + 1);
+	bool flag = false;
+	int cnt = 0;
+
 	while (!flag)
 	{
-		for (int i = 0; i < numberActors; i++)
+
+		std::cout << "Enter actor first name actor: ";
+		std::getline(std::cin, movies.cinemaBase[index].data_Movies.starring[cnt].firstName);
+		std::cout << "Enter actor last name actor: ";
+		std::getline(std::cin, movies.cinemaBase[index].data_Movies.starring[cnt].lastName);
+		std::cout << "Enter the role of the actor: ";
+		std::getline(std::cin, movies.cinemaBase[index].data_Movies.starring[cnt].characters);
+		std::cout << "Are there other actors? <0> - no <1> - yes: ";
+		int answer = 0;
+		std::cin >> answer;
+
+
+		switch (answer)
 		{
-			std::cout << "Enter actor first name actor: ";
-			std::getline(std::cin, movies.data_Movies.starring[i].firstName);
-			std::cout << "Enter actor last name actor: ";
-			std::getline(std::cin, movies.data_Movies.starring[i].lastName);
-			std::cout << "Enter the actor's birthday in the format <day> <month> <year> separated by a space: ";
-			std::cin >> movies.data_Movies.starring[i].birthday_day
-					 >> movies.data_Movies.starring[i].birthday_month
-					 >> movies.data_Movies.starring[i].birthday_year;
+		case 0:
+			flag = true;
+			break;
+		case 1:
+			movies.cinemaBase[index].data_Movies.starring.resize(
+					movies.cinemaBase[index].data_Movies.starring.size() + 1);
 			std::cin.ignore();
-			std::cout << "Enter the role of the actor: ";
-			std::getline(std::cin, movies.data_Movies.starring[i].characters);
-			if (i == numberActors - 1)
-			{
-				flag = true;
-			}
+			cnt++;
+			break;
+		default:
+			flag = true;
 		}
+
 	}
 
-
-	std::ofstream file_json("test.json");
+	std::ofstream file_json("film.json");
 	if (!file_json.is_open())
 	{
 		std::cerr << "*** ERROR Open file!!! ***" << std::endl;
 		return;
 	}
 	nlohmann::json object{};
-	object["id"] = movies.id;
-	object["data_Movies"] = {{ "name",         movies.data_Movies.name },
-							 { "country",      movies.data_Movies.country },
-							 { "releaseDates", movies.data_Movies.productionYear },
-							 { "runningTime",  movies.data_Movies.runningTime }};
-	object["data_Movies"]["distributed"] = {{ "name", movies.data_Movies.distributed.name }};
-	object["data_Movies"]["directed"] = {{ "name", movies.data_Movies.directed.name }};
-	object["data_Movies"]["written"] = {{ "name", movies.data_Movies.written.name }};
-	for (int i = 0; i < numberActors; i++)
+	object["name"] = movies.cinemaBase[index].name,
+			object["data_Movies"] = {{ "name",         movies.cinemaBase[index].name },
+									 { "country",      movies.cinemaBase[index].data_Movies.country },
+									 { "releaseDates", movies.cinemaBase[index].data_Movies.productionYear },
+									 { "runningTime",  movies.cinemaBase[index].data_Movies.runningTime }};
+	object["data_Movies"]["distributed"] = {{ "name", movies.cinemaBase[index].data_Movies.distributed.name }};
+	object["data_Movies"]["directed"] = {{ "name", movies.cinemaBase[index].data_Movies.directed.name }};
+	object["data_Movies"]["written"] = {{ "name", movies.cinemaBase[index].data_Movies.written.name }};
+	for (int i = 0; i < movies.cinemaBase[index].data_Movies.starring.size(); i++)
 	{
-		object["data_Movies"]["starring"] = {{ "first name", movies.data_Movies.starring[i].firstName },
-											 { "last name", movies.data_Movies.starring[i].lastName },
-											 { "birthday_day", movies.data_Movies.starring[i].birthday_day },
-											 { "birthday_month", movies.data_Movies.starring[i].birthday_month },
-											 { "birthday_year", movies.data_Movies.starring[i].birthday_year },
-											 { "characters", movies.data_Movies.starring[i].characters }};
+		object["data_Movies"]["starring"][i] = {{ "first name", movies.cinemaBase[index].data_Movies.starring[i].firstName },
+												{ "last name",  movies.cinemaBase[index].data_Movies.starring[i].lastName },
+												{ "characters", movies.cinemaBase[index].data_Movies.starring[i].characters }};
 	}
 
 

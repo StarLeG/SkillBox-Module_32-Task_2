@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.25.1)
 project(Task_32_2)
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}//base//film.json DESTINATION ${CMAKE_CURRENT_BINARY_DIR}//src)
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}//base//test.json DESTINATION ${CMAKE_CURRENT_BINARY_DIR}//src)
+
 
 set(MY_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include)
 set(JSON_BuildTests OFF CACHE INTERNAL "")
