@@ -41,6 +41,8 @@ void read_json_file()
 
 void addMovies_to_base()
 {
+	nlohmann::json object{};
+
 	CinemaBase movies{};
 	movies.cinemaBase.resize(movies.cinemaBase.size() + 1);
 	int index = movies.cinemaBase.size() - 1;
@@ -109,10 +111,9 @@ void addMovies_to_base()
 		std::cerr << "*** ERROR Open file!!! ***" << std::endl;
 		return;
 	}
-	nlohmann::json object{};
+
 	object["name"] = movies.cinemaBase[index].name,
-			object["data_Movies"] = {{ "name",         movies.cinemaBase[index].name },
-									 { "country",      movies.cinemaBase[index].data_Movies.country },
+			object["data_Movies"] = {{ "country",      movies.cinemaBase[index].data_Movies.country },
 									 { "releaseDates", movies.cinemaBase[index].data_Movies.productionYear },
 									 { "runningTime",  movies.cinemaBase[index].data_Movies.runningTime }};
 	object["data_Movies"]["distributed"] = {{ "name", movies.cinemaBase[index].data_Movies.distributed.name }};
