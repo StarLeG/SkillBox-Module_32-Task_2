@@ -16,7 +16,7 @@ int main()
 			read_json_file();
 			break;
 		case 2:
-			addMovies_to_base();
+			addMovies();
 			break;
 		case 3:
 			break;

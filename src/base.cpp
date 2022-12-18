@@ -21,112 +21,51 @@ void show_json()
 
 void read_json_file()
 {
-	std::ifstream file_json("film.json");
-	if (!file_json.is_open())
-	{
-		std::cerr << "*** ERROR Open file!!! ***" << std::endl;
-		return;
-	}
-
-	nlohmann::json object{};
-	CinemaBase movies{};
-	file_json >> object;
-	file_json.close();
-
-	std::string serializedString = object.dump();
-
-	nlohmann::json object_1 = nlohmann::json::parse(serializedString);
-
 }
 
-void addMovies_to_base()
+Movies addMovies()
 {
-	CinemaBase movies{};
-	movies.cinemaBase.resize(movies.cinemaBase.size() + 1);
-	int index = movies.cinemaBase.size() - 1;
-
-	std::cout << "Enter movie title: ";
-	std::cin.ignore();
-	std::getline(std::cin, movies.cinemaBase[index].name);
-
-	std::cout << "Enter country name: ";
-	std::getline(std::cin, movies.cinemaBase[index].data_Movies.country);
-
-	std::cout << "Enter production year: ";
-	std::cin >> movies.cinemaBase[index].data_Movies.productionYear;
-
-	std::cout << "Enter movie duration: ";
-	std::cin >> movies.cinemaBase[index].data_Movies.runningTime;
+	Movies movies{};
+	bool exit = false;
+	int index = 0;
+	
 
 	std::cin.ignore();
-	std::cout << "Enter the name of the film studio: ";
-	std::getline(std::cin, movies.cinemaBase[index].data_Movies.distributed.name);
+	std::cout << "Enter the name of the film: ";
+	std::getline(std::cin, movies.name);
+	std::cout << "Enter the name of the film company: ";
+	std::getline(std::cin, movies.data_Movies.distributed.name);
+	std::cout << "Enter the name of the director: ";
+	std::getline(std::cin, movies.data_Movies.directed.name);
+	std::cout << "Enter the name of the screenwriter: ";
+	std::getline(std::cin, movies.data_Movies.written.name);
+	std::cout << "Enter the name of the manufacturer's country: ";
+	std::getline(std::cin, movies.data_Movies.country);
+	std::cout << "Enter the duration of the films: ";
+	std::cin >> movies.data_Movies.runningTime;
+	std::cout << "Enter a year of film: ";
+	std::cin >> movies.data_Movies.productionYear;
 
-	std::cout << "Enter director's name: ";
-	std::getline(std::cin, movies.cinemaBase[index].data_Movies.directed.name);
-
-	std::cout << "Enter the wall painter's name: ";
-	std::getline(std::cin, movies.cinemaBase[index].data_Movies.written.name);
-
-	movies.cinemaBase[index].data_Movies.starring.resize(movies.cinemaBase[index].data_Movies.starring.size() + 1);
-	bool flag = false;
-	int cnt = 0;
-
-	while (!flag)
+	while (!exit)
 	{
-
-		std::cout << "Enter actor first name actor: ";
-		std::getline(std::cin, movies.cinemaBase[index].data_Movies.starring[cnt].firstName);
-		std::cout << "Enter actor last name actor: ";
-		std::getline(std::cin, movies.cinemaBase[index].data_Movies.starring[cnt].lastName);
+		movies.data_Movies.starring.resize(movies.data_Movies.starring.size() + 1);
+		std::cin.ignore();
+		std::cout << "Enter the name of the actor: ";
+		std::getline(std::cin, movies.data_Movies.starring[index].name);
 		std::cout << "Enter the role of the actor: ";
-		std::getline(std::cin, movies.cinemaBase[index].data_Movies.starring[cnt].characters);
-		std::cout << "Are there other actors? <0> - no <1> - yes: ";
-		int answer = 0;
-		std::cin >> answer;
+		std::getline(std::cin, movies.data_Movies.starring[index].characters);
 
-
-		switch (answer)
+		std::cout << "Want to enter the data of another actor? <0> - no, <1> - yes: ";
+		std::cin >> exit;
+		if (!exit)
 		{
-		case 0:
-			flag = true;
-			break;
-		case 1:
-			movies.cinemaBase[index].data_Movies.starring.resize(
-					movies.cinemaBase[index].data_Movies.starring.size() + 1);
-			std::cin.ignore();
-			cnt++;
-			break;
-		default:
-			flag = true;
+			exit = true;
 		}
-
 	}
 
-	std::ofstream file_json("film.json");
-	if (!file_json.is_open())
-	{
-		std::cerr << "*** ERROR Open file!!! ***" << std::endl;
-		return;
-	}
-	nlohmann::json object{};
-	object["name"] = movies.cinemaBase[index].name,
-			object["data_Movies"] = {{ "name",         movies.cinemaBase[index].name },
-									 { "country",      movies.cinemaBase[index].data_Movies.country },
-									 { "releaseDates", movies.cinemaBase[index].data_Movies.productionYear },
-									 { "runningTime",  movies.cinemaBase[index].data_Movies.runningTime }};
-	object["data_Movies"]["distributed"] = {{ "name", movies.cinemaBase[index].data_Movies.distributed.name }};
-	object["data_Movies"]["directed"] = {{ "name", movies.cinemaBase[index].data_Movies.directed.name }};
-	object["data_Movies"]["written"] = {{ "name", movies.cinemaBase[index].data_Movies.written.name }};
-	for (int i = 0; i < movies.cinemaBase[index].data_Movies.starring.size(); i++)
-	{
-		object["data_Movies"]["starring"][i] = {{ "first name", movies.cinemaBase[index].data_Movies.starring[i].firstName },
-												{ "last name",  movies.cinemaBase[index].data_Movies.starring[i].lastName },
-												{ "characters", movies.cinemaBase[index].data_Movies.starring[i].characters }};
-	}
+	return movies;
+}
 
-
-	file_json << object;
-
-	file_json.close();
+void save(Movies &movies)
+{
 }
