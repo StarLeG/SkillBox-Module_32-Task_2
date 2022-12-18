@@ -2,8 +2,10 @@
 #include "menu.h"
 #include "base.h"
 
+
 int main()
 {
+	std::vector<Movies> base;
 	int input = -1;
 	menu();
 	std::cout << "Your choice: ";
@@ -16,7 +18,7 @@ int main()
 			read_json_file();
 			break;
 		case 2:
-			addMovies();
+			base.emplace_back(addMovies());			
 			break;
 		case 3:
 			break;
