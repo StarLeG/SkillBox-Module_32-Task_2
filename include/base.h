@@ -8,12 +8,22 @@
 
 #include "nlohmann/json.hpp"
 
+enum MenuType
+{
+	EXIT,
+	SHOW_BASE,
+	ADD_MOVIES,
+	SEARCH_ACTOR,
+	SHOW_JSON,
+	LOAD,
+	SAVE
+};
+
 namespace f_n
 {
 	struct Starring
 	{
-		std::string firstName;
-		std::string lastName;
+		std::string name;		
 		std::string characters;
 	};
 
@@ -43,20 +53,20 @@ namespace f_n
 		std::vector<f_n::Starring> starring;
 	};
 
-	struct Movie
-	{
-		std::string name;
-		f_n::Data_Movies data_Movies;
-	};
+	
 }
 
-struct CinemaBase
+struct Movies
 {
-	std::vector<f_n::Movie> cinemaBase;
+	std::string name;
+	f_n::Data_Movies data_Movies;
 };
 
 void show_json();
 
 void read_json_file();
 
-void addMovies_to_base();
+Movies addMovies();
+
+void save (std::vector<Movies>& base,std::fstream& file_json);
+void load (std::vector<Movies>& base,std::fstream& file_json);
