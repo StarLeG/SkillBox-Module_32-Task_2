@@ -9,6 +9,8 @@ void menu()
 	std::cout << "2 - Add movie to database;" << std::endl;
 	std::cout << "3 - Actor search;" << std::endl;
 	std::cout << "4 - Show JSON file;" << std::endl;
+	std::cout << "5 - Load JSON file;" << std::endl;
+	std::cout << "6 - Save JSON file;" << std::endl;
 	std::cout << "0 - Exit;" << std::endl;
 
 }
