@@ -19,8 +19,10 @@ void show_json()
 	std::cout << std::setw(4) << obj << std::endl;
 }
 
-void showMovies(std::fstream& file_json)
+void showMovies(std::vector<Movies>& base,std::fstream& file_json)
 {
+	std::cout << "List of films from JSON file:" << std::endl;
+	std::cout << "****************************************************************" << std::endl;
 	file_json.open("film.json", std::ios::in);
 	if (!file_json.is_open())
 	{
@@ -34,6 +36,21 @@ void showMovies(std::fstream& file_json)
 	for (auto it = obj.begin(); it != obj.end(); it++)
 	{
 		std::cout << it.key() << std::endl;
+	}
+	std::cout << "****************************************************************" << std::endl;
+
+	std::cout << "List of films from the database.:" << std::endl;
+	std::cout << "****************************************************************" << std::endl;
+	if(base.empty())
+	{
+		std::cout << "The list is empty" << std::endl;
+	}
+	else
+	{
+		for(int i = 0; i < base.size();i++)
+		{
+			std::cout << base[i].name << std::endl;
+		}
 	}
 
 }

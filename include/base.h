@@ -64,7 +64,7 @@ struct Movies
 
 void show_json();
 
-void showMovies(std::fstream& file_json);
+void showMovies(std::vector<Movies>& base,std::fstream& file_json);
 
 Movies addMovies();
 

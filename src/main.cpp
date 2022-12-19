@@ -16,7 +16,7 @@ int main()
 		switch (input)
 		{
 		case MenuType::SHOW_BASE:
-			showMovies(file_json);
+			showMovies(base,file_json);
 			break;
 		case MenuType::ADD_MOVIES:
 			base.emplace_back(addMovies());			
