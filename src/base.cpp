@@ -31,7 +31,7 @@ void showMovies(std::fstream& file_json)
 	file_json >> obj;
 	file_json.close();
 
-	for(auto it = obj.begin(); it != obj.end(); it++)
+	for (auto it = obj.begin(); it != obj.end(); it++)
 	{
 		std::cout << it.key() << std::endl;
 	}
@@ -85,7 +85,7 @@ Movies addMovies()
 	return movies;
 }
 
-void save(std::vector<Movies> &base, std::fstream &file_json)
+void save(std::vector<Movies>& base, std::fstream& file_json)
 {
 	file_json.open("film.json", std::ios::out);
 	if (!file_json.is_open())
@@ -115,6 +115,43 @@ void save(std::vector<Movies> &base, std::fstream &file_json)
 	file_json << obj;
 	file_json.close();
 }
-void load(std::vector<Movies> &base, std::fstream &file_json)
+
+void load(std::vector<Movies>& base, std::fstream& file_json)
 {
+	file_json.open("film.json", std::ios::in);
+	if (!file_json.is_open())
+	{
+		std::cerr << "*** MISTAKE!!! The file cannot be open.***" << std::endl;
+		return;
+	}
+	nlohmann::json obj;
+	file_json >> obj;
+	file_json.close();
+
+	int index = 0;
+	base.resize(obj.size());
+
+	for (auto it = obj.begin(); it != obj.end(); it++, index++)
+	{
+		base[index].name = it.key();
+		nlohmann::json movie = it.value();
+		base[index].data_Movies.country = movie[0]["data_Movies"]["country"];
+		base[index].data_Movies.runningTime = movie[0]["data_Movies"]["runningTime"];
+		base[index].data_Movies.productionYear = movie[0]["data_Movies"]["productionYear"];
+		base[index].data_Movies.distributed.name = movie[0]["data_Movies"]["distributed"]["name"];
+		base[index].data_Movies.directed.name = movie[0]["data_Movies"]["directed"]["name"];
+		base[index].data_Movies.written.name = movie[0]["data_Movies"]["written"]["name"];
+
+		base[index].data_Movies.starring.resize(movie[0]["data_Movies"]["starring"].size());
+
+
+		for(int i = 0; i < movie[0]["data_Movies"]["starring"].size();i++)
+		{
+			base[index].data_Movies.starring[i].name = movie[0]["data_Movies"]["starring"][i]["name"];
+			base[index].data_Movies.starring[i].characters = movie[0]["data_Movies"]["starring"][i]["characters"];
+		}
+
+
+	}
+
 }

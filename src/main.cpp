@@ -27,6 +27,7 @@ int main()
 			show_json();
 			break;
 		case MenuType::LOAD:
+			load(base,file_json);
 			break;
 		case MenuType::SAVE:
 			save(base,file_json);
