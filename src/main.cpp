@@ -22,6 +22,7 @@ int main()
 			base.emplace_back(addMovies());			
 			break;
 		case MenuType::SEARCH_ACTOR:
+			actorSearch(base,file_json);
 			break;
 		case MenuType::SHOW_JSON :
 			show_json();

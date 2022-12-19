@@ -70,3 +70,4 @@ Movies addMovies();
 
 void save (std::vector<Movies>& base,std::fstream& file_json);
 void load (std::vector<Movies>& base,std::fstream& file_json);
+void actorSearch(std::vector<Movies>& base,std::fstream& file_json);

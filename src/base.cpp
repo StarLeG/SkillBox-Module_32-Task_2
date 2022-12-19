@@ -19,7 +19,7 @@ void show_json()
 	std::cout << std::setw(4) << obj << std::endl;
 }
 
-void showMovies(std::vector<Movies>& base,std::fstream& file_json)
+void showMovies(std::vector<Movies>& base, std::fstream& file_json)
 {
 	std::cout << "List of films from JSON file:" << std::endl;
 	std::cout << "****************************************************************" << std::endl;
@@ -41,13 +41,13 @@ void showMovies(std::vector<Movies>& base,std::fstream& file_json)
 
 	std::cout << "List of films from the database.:" << std::endl;
 	std::cout << "****************************************************************" << std::endl;
-	if(base.empty())
+	if (base.empty())
 	{
 		std::cout << "The list is empty" << std::endl;
 	}
 	else
 	{
-		for(int i = 0; i < base.size();i++)
+		for (int i = 0; i < base.size(); i++)
 		{
 			std::cout << base[i].name << std::endl;
 		}
@@ -162,7 +162,7 @@ void load(std::vector<Movies>& base, std::fstream& file_json)
 		base[index].data_Movies.starring.resize(movie[0]["data_Movies"]["starring"].size());
 
 
-		for(int i = 0; i < movie[0]["data_Movies"]["starring"].size();i++)
+		for (int i = 0; i < movie[0]["data_Movies"]["starring"].size(); i++)
 		{
 			base[index].data_Movies.starring[i].name = movie[0]["data_Movies"]["starring"][i]["name"];
 			base[index].data_Movies.starring[i].characters = movie[0]["data_Movies"]["starring"][i]["characters"];
@@ -170,5 +170,38 @@ void load(std::vector<Movies>& base, std::fstream& file_json)
 
 
 	}
+
+}
+
+void actorSearch(std::vector<Movies>& base, std::fstream& file_json)
+{
+	std::cout << "Search for an actor in the database:" << std::endl;
+	std::cout << "************************************************************************" << std::endl;
+	std::cout << "Enter the first or last name of the actor you want to find: " << std::endl;
+	std::string name;
+	std::cin >> name;
+	if (!base.empty())
+	{
+		for (int i = 0; i < base.size(); i++)
+		{
+			for (int j = 0; j < base[i].data_Movies.starring.size(); j++)
+			{
+				std::string buffer = base[i].data_Movies.starring[j].name;
+				if (buffer.find(name) != -1)
+				{
+					std::cout << base[i].data_Movies.starring[j].name << " as a "
+							  << base[i].data_Movies.starring[j].characters
+							  << "in the movie " << base[i].name << std::endl;
+				}
+			}
+		}
+
+	}
+	else
+	{
+		std::cout << "The database is empty. Update the database data." << std::endl;
+		return;
+	}
+	std::cout << "************************************************************************" << std::endl;
 
 }
