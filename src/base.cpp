@@ -19,8 +19,23 @@ void show_json()
 	std::cout << std::setw(4) << obj << std::endl;
 }
 
-void read_json_file()
+void showMovies(std::fstream& file_json)
 {
+	file_json.open("film.json", std::ios::in);
+	if (!file_json.is_open())
+	{
+		std::cerr << "*** MISTAKE!!! The file cannot be open.***" << std::endl;
+		return;
+	}
+	nlohmann::json obj;
+	file_json >> obj;
+	file_json.close();
+
+	for(auto it = obj.begin(); it != obj.end(); it++)
+	{
+		std::cout << it.key() << std::endl;
+	}
+
 }
 
 Movies addMovies()
