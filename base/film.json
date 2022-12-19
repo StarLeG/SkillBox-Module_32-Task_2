@@ -1,1 +1,274 @@
-{"Terminator 2: Judgment Day":[{"data_Movies":{"country":"United States","directed":{"name":"James Cameron"},"distributed":{"name":"Tri-Star Pictures"},"productionYear":1991,"runningTime":137,"starring":[{"characters":"Terminator","name":"Arnold Schwarzenegger"},{"characters":"Sarah Connor","name":"Linda Hamilton"},{"characters":"John Connor","name":"Edward Furlong"},{"characters":"T-1000","name":"Robert Patrick"},{"characters":"Dr. Silberman","name":"Earl Boen "}],"written":{"name":"William Wisher"}}}]}
+{
+  "Terminator 2: Judgment Day": [
+    {
+      "data_Movies": {
+        "country": "United States",
+        "directed": {
+          "name": "James Cameron"
+        },
+        "distributed": {
+          "name": "Tri-Star Pictures"
+        },
+        "productionYear": 1991,
+        "runningTime": 137,
+        "starring": [
+          {
+            "characters": "Terminator",
+            "name": "Arnold Schwarzenegger"
+          },
+          {
+            "characters": "Sarah Connor",
+            "name": "Linda Hamilton"
+          },
+          {
+            "characters": "John Connor",
+            "name": "Edward Furlong"
+          },
+          {
+            "characters": "T-1000",
+            "name": "Robert Patrick"
+          },
+          {
+            "characters": "Dr. Silberman",
+            "name": "Earl Boen "
+          }
+        ],
+        "written": {
+          "name": "William Wisher"
+        }
+      }
+    }
+  ],
+  "Ghostbusters": [
+    {
+      "data_Movies": {
+        "country": "United States",
+        "directed": {
+          "name": "Ivan Reitman"
+        },
+        "distributed": {
+          "name": "Columbia Pictures"
+        },
+        "productionYear": 1984,
+        "runningTime": 105,
+        "starring": [
+          {
+            "characters": "Peter Venkman",
+            "name": "Bill Murray"
+          },
+          {
+            "characters": "Ray Stantz",
+            "name": "Dan Aykroyd"
+          },
+          {
+            "characters": "Dana Barrett",
+            "name": "Sigourney Weaver"
+          },
+          {
+            "characters": "Harold Ramis",
+            "name": "Egon Spengler"
+          },
+          {
+            "characters": "Louis Tully",
+            "name": "Rick Moranis"
+          },
+          {
+            "characters": "Janine Melnitz",
+            "name": "Annie Potts"
+          },
+          {
+            "characters": "Walter Peck",
+            "name": "William Atherton"
+          },
+          {
+            "characters": "Winston Zeddemore",
+            "name": "Ernie Hudson"
+          }
+        ],
+        "written": {
+          "name": "Dan Aykroyd"
+        }
+      }
+    }
+  ],
+  "Aliens": [
+    {
+      "data_Movies": {
+        "country": "United States",
+        "directed": {
+          "name": "James Cameron"
+        },
+        "distributed": {
+          "name": "20th Century Fox"
+        },
+        "productionYear": 1986,
+        "runningTime": 137,
+        "starring": [
+          {
+            "characters": "Ellen Ripley",
+            "name": "Sigourney Weaver"
+          },
+          {
+            "characters": "Dwayne Hicks",
+            "name": "Michael Biehn "
+          },
+          {
+            "characters": "Dana Barrett",
+            "name": "Sigourney Weaver"
+          },
+          {
+            "characters": "Carter J. Burke",
+            "name": "Paul Reiser"
+          },
+          {
+            "characters": "Bishop",
+            "name": "Lance Henriksen"
+          },
+          {
+            "characters": "Hudson",
+            "name": "Bill Paxton"
+          },
+          {
+            "characters": "Gorman",
+            "name": "William Hope"
+          },
+          {
+            "characters": "Frost",
+            "name": "Ricco Ross"
+          },
+          {
+            "characters": "Apone",
+            "name": "Al Matthews"
+          }
+        ],
+        "written": {
+          "name": "James Cameron"
+        }
+      }
+    }
+  ],
+  "Limitless": [
+    {
+      "data_Movies": {
+        "country": "United States",
+        "directed": {
+          "name": "Neil Burger"
+        },
+        "distributed": {
+          "name": "Relativity Media"
+        },
+        "productionYear": 2011,
+        "runningTime": 105,
+        "starring": [
+          {
+            "characters": "Edward \"Eddie\" Morra",
+            "name": "Bradley Cooper"
+          },
+          {
+            "characters": "Lindy",
+            "name": "Abbie Cornish"
+          },
+          {
+            "characters": "Carlos \"Carl\" Van Loon",
+            "name": "Robert De Niro"
+          },
+          {
+            "characters": "Melissa Gant",
+            "name": "Anna Friel"
+          },
+          {
+            "characters": "Vernon Gant",
+            "name": "Johnny Whitworth"
+          },
+          {
+            "characters": "Henry \"Hank\" Atwood",
+            "name": "Richard Bekins"
+          },
+          {
+            "characters": "Donald \"Don\" Pierce",
+            "name": "Robert John Burke"
+          },
+          {
+            "characters": "the Man in Tan Coat",
+            "name": "Tomas Arana"
+          },
+          {
+            "characters": "Valerie",
+            "name": "T.V. Carpio"
+          }
+        ],
+        "written": {
+          "name": "Leslie Dixon"
+        }
+      }
+    }
+  ],
+  "Jumanji: Welcome to the Jungle": [
+    {
+      "data_Movies": {
+        "country": "United States",
+        "directed": {
+          "name": "Jake Kasdan"
+        },
+        "distributed": {
+          "name": "Sony Pictures Releasing"
+        },
+        "productionYear": 2017,
+        "runningTime": 119,
+        "starring": [
+          {
+            "characters": "Dr. Xander \"Smolder\" Bravestone",
+            "name": "Dwayne Johnson"
+          },
+          {
+            "characters": "Spencer Gilpin",
+            "name": "Alex Wolff"
+          },
+          {
+            "characters": "Franklin \"Mouse\" Finbar",
+            "name": "Kevin Hart"
+          },
+          {
+            "characters": "Anthony \"Fridge\" Johnson",
+            "name": "Ser'Darius Blain"
+          },
+          {
+            "characters": "Vernon Gant",
+            "name": "Johnny Whitworth"
+          },
+          {
+            "characters": "Professor Sheldon \"Shelly\" Oberon",
+            "name": "Jack Black"
+          },
+          {
+            "characters": "Bethany Walker",
+            "name": "Madison Iseman"
+          },
+          {
+            "characters": "Ruby Roundhouse",
+            "name": "Karen Gillan"
+          },
+          {
+            "characters": "Martha Kaply",
+            "name": "Morgan Turner"
+          },
+          {
+            "characters": "Jefferson \"Seaplane\" McDonough",
+            "name": "Nick Jonas"
+          },
+          {
+            "characters": "Alex Vreeke",
+            "name": "Colin Hanks"
+          },
+          {
+            "characters": "Nigel Billingsley",
+            "name": "Rhys Darby"
+          }
+        ],
+        "written": {
+          "name": "Chris McKenna"
+        }
+      }
+    }
+  ]
+}
